@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: mall-admin
+  cloud:
+    nacos:
+      config:
+        # server-addr: http://106.15.238.69:8848 # 配置中心地址
+        server-addr: http://81.69.6.206:1122  # 集群配置nginx地址
+        namespace: 513896da-77d1-4285-a157-a508eb8d4581
+        group: dev
+        file-extension: yaml
+        # 加载config中的数据源配置
+        extension-configs[0]:
+          data-id: datasource.yml
+          group: dev
+          refresh: true
+        # 加载config中的mybatis配置
+        extension-configs[1]:
+          data-id: mybatis-plus.yml
+          group: dev
+          refresh: true
+        # 加载config中的其它配置
+        extension-configs[2]:
+          data-id: application-admin.yml
+          group: dev
+          refresh: true
